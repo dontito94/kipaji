@@ -1,7 +1,8 @@
+const express = require('express');
 var mysql = require ('mysql');
-const Schema = mysql.Schema;
+ var Customer = {
 
-const CustomerSchema = new Schema({
+ CustomerSchema : {
 	NAME:{
  	type:String,
  	required:[true,'username name field required'],
@@ -9,7 +10,7 @@ const CustomerSchema = new Schema({
 
  },
  AGE:{
- 	type:integer,
+ 	type:String,
  	unique: true,
  	required:[true,'email field required'],
 
@@ -24,8 +25,8 @@ const CustomerSchema = new Schema({
  	required:[true,'lastname is required']
  },
  
-});
+}
+};
 
-const Customer = mysql.model('Customer',CustomerSchema);
 module.exports = Customer;
   
